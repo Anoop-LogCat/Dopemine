@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="production.nishitha.dopemine.SplashScreen"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_to_signUp"
+            app:destination="@id/signUp"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreen_to_mainMenu"
+            app:destination="@id/mainMenu"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUp"
+        android:name="production.nishitha.dopemine.SignUp"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUp_to_login"
+            app:destination="@id/login"
+            app:popUpTo="@id/signUp"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="production.nishitha.dopemine.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_signUp"
+            app:destination="@id/signUp"
+            app:popUpTo="@id/login"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainMenu"
+        android:name="production.nishitha.dopemine.MainMenu"
+        android:label="fragment_main_menu"
+        tools:layout="@layout/fragment_main_menu" >
+        <action
+            android:id="@+id/action_mainMenu_to_imageShownWindow"
+            app:destination="@id/imageShownWindow" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageShownWindow"
+        android:name="production.nishitha.dopemine.ImageShownWindow"
+        android:label="fragment_image_shown_window"
+        tools:layout="@layout/fragment_image_shown_window" >
+        <action
+            android:id="@+id/action_imageShownWindow_to_mainMenu"
+            app:destination="@id/mainMenu"
+            app:popUpTo="@id/mainMenu"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
